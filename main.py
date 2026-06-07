@@ -50,7 +50,7 @@ def choose_letter():
 
 now = dt.datetime.now()
 today = (now.month, now.day)
-data = pandas.read_csv("../birthdays.csv")
+data = pandas.read_csv("birthdays.csv")
 birthday_dict = {(data_row.month, data_row.day): data_row for (index, data_row) in data.iterrows()}
 recipient_email = birthday_dict.get(today, {}).get('email')  # access a value after creating a dictionary using key names
 recipient_name = birthday_dict.get(today, {}).get('name')   # access a value after creating a dictionary using key names
