@@ -8,7 +8,7 @@
 
 import os
 import pandas
-from random import random, choice
+import random as r
 import smtplib
 import datetime as dt
 
@@ -30,7 +30,7 @@ def choose_letter():
     LETTERS.append(letter_2)
     LETTERS.append(letter_3)
 
-    generic_letter = random.choice(LETTERS)
+    generic_letter = r.choice(LETTERS)
     letter_print = generic_letter.replace("[NAME]", recipient_name)
     print(letter_print)
 
