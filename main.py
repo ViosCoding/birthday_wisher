@@ -13,8 +13,8 @@ import smtplib
 import datetime as dt
 
 # import os and use it to get the Github repository secrets
-my_email = os.environ.get("MY_EMAIL")
-app_password = os.environ.get("MY_PASSWORD")
+MY_EMAIL = os.environ.get("MY_EMAIL")
+MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
 email_closing = "Best regards,\nCorey London"
 LETTERS = []
@@ -41,9 +41,9 @@ def choose_letter():
         with smtplib.SMTP("smtp.gmail.com",
                           port=587) as connection:  # connection to email server, must specify port number
             connection.starttls()  # starts email protocol to stop interception
-            connection.login(user=my_email,
-                             password=app_password)  # login information for email, use app password instead of personal
-            connection.sendmail(from_addr=my_email, to_addrs=recipient_email,
+            connection.login(user=MY_EMAIL,
+                             password=MY_PASSWORD)  # login information for email, use app password instead of personal
+            connection.sendmail(from_addr=MY_EMAIL, to_addrs=recipient_email,
                                 msg=f'Subject:Happy Birthday\n\n{letter_print} \n\n{email_closing}')
     send_letter()
 
