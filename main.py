@@ -13,8 +13,8 @@ import smtplib
 import datetime as dt
 
 # import os and use it to get the Github repository secrets
-MY_EMAIL = os.environ.get("MY_EMAIL")
-MY_PASSWORD = os.environ.get("MY_PASSWORD")
+my_email = os.environ.get("MY_EMAIL")
+app_password = os.environ.get("MY_PASSWORD")
 
 email_closing = "Best regards,\nCorey London"
 LETTERS = []
